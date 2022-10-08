@@ -1,9 +1,11 @@
 import React from 'react'
 
 
-export default function Card({item}) {
+export default function Card({item, id, handleClick}) {
+
+    const itemClass = item.state ? "active" + item.state: ""
   return (
-    <div className='card'>
+    <div className={'card' + itemClass} onClick={() => handleClick(id)}>
         <img src={item.img} alt=''/>
     </div>
   )
